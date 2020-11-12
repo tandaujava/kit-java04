@@ -5,17 +5,20 @@
  */
 package Buoi1.javaSwing.B3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell
  */
-public class from_b3 extends javax.swing.JFrame {
+public class form_b3 extends javax.swing.JFrame {
 
     /**
      * Creates new form from_b3
      */public static String pass;
+    private boolean Visible;
      
-    public from_b3() {
+    public form_b3() {
         initComponents();
     }
 
@@ -197,29 +200,37 @@ public class from_b3 extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
-        String s1 = "sinhvien";
+          String s1 = "sinhvien";
         String s2 = "12345678";
-        if(txt_name.getText().equals("")){
-            System.out.println("Vui long nhap urse nam!");
-            
-        }else{ 
-            if(txtpass.getText().equals("")){
-                    System.out.println("vui long nhap pass!");
-            }else{
-         if(txt_name.getText().equals(s1)){
-            if(txtpass.getText().equals(s2)){
-                 pass = txtpass.getText();
-                 from_chuyendoi form = new from_chuyendoi(txt_name.getText());
+        String user=txt_name.getText();
+        String pass = txtpass.getText();
+        StringBuilder tbBuilder=new StringBuilder();
+    
+        if(user.equalsIgnoreCase("")){
+            tbBuilder.append("Vui long nhap urse name!\n");
+        }
+        if(pass.equals("")){
+            tbBuilder.append("vui long nhap pass!");
+        }
+        if(tbBuilder.length()> 0){
+            JOptionPane.showMessageDialog(this, tbBuilder.toString(),"Tan Dau", JOptionPane.NO_OPTION);
+        }
+         if(user.equals(s1)){
+            if(pass.equals(s2)){
+                 form_chuyendoi form = new form_chuyendoi(user,pass);
                  form.setVisible(true);
+                 this.setVisible(false);
             }else{
-                System.out.println("pass sai!");
+                tbBuilder.append("pass sai!");
+                JOptionPane.showMessageDialog(this, tbBuilder.toString(),"Tan Dau", JOptionPane.NO_OPTION);
             }
         }else{
-            System.out.println("name sai!");
+             tbBuilder.append("name sai!");
+             JOptionPane.showMessageDialog(this, tbBuilder.toString(),"Tan Dau", JOptionPane.NO_OPTION);
          }
-        }
-        }
-                
+         
+         
+             
        
         
     }//GEN-LAST:event_jToggleButton1ActionPerformed
@@ -250,20 +261,21 @@ public class from_b3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(from_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(from_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(from_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(from_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_b3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new from_b3().setVisible(true);
+                new form_b3().setVisible(true);
             }
         });
     }
@@ -282,4 +294,12 @@ public class from_b3 extends javax.swing.JFrame {
     private javax.swing.JTextField txt_name;
     private javax.swing.JPasswordField txtpass;
     // End of variables declaration//GEN-END:variables
+
+    private void close(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void close() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

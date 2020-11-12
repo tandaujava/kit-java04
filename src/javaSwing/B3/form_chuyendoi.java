@@ -9,19 +9,21 @@ package Buoi1.javaSwing.B3;
  *
  * @author Dell
  */
-public class from_chuyendoi extends javax.swing.JFrame {
+public class form_chuyendoi extends javax.swing.JFrame {
 
     /**
      * Creates new form from_chuyendoi
      */private String name;
-    public from_chuyendoi(String name) {
+     private String pass;
+    public form_chuyendoi(String name,String pass) {
         initComponents();
         this.name = name ;
+        this.pass = pass;
         this.jTextField1.setText(name);
-        this.jTextField2.setText(from_b3.pass);
+        this.jTextField2.setText(pass);
     }
 
-    private from_chuyendoi() {
+    private form_chuyendoi() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -123,20 +125,21 @@ public class from_chuyendoi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(from_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(from_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(from_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(from_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(form_chuyendoi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new from_chuyendoi().setVisible(true);
+                new form_chuyendoi().setVisible(true);
             }
         });
     }
